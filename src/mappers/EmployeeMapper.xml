@@ -5,6 +5,12 @@
 
     <select id="queryAll" resultType="employee">
         select * from emp
+        <where>
+            <if test="ename != null and ename != ''">
+                ename = #{ename}
+            </if>
+        </where>
     </select>
+
 
 </mapper>
