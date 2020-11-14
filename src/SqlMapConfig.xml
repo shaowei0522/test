@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+
+
+    <settings>
+        <!-- 控制台打印sql语句 -->
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+
+
+
+    <!--导入db.properties-->
+    <!--<properties resource="" />-->
+
+    <!--给实体类指定别名-->
+    <typeAliases>
+        <!--方式一:为单个实体类指定别名-->
+        <!--<typeAlias type="com.bjpowernode.mybatis01.bean.Dept" alias="dept" />-->
+        <!--方式二:批量扫描包，指定别名，默认的别名就是类名首字母小写-->
+        <package name="com.bjpowernode.mybatis.bean" />
+    </typeAliases>
+
+<!--    <plugins>
+        &lt;!&ndash; com.github.pagehelper为PageHelper类所在包名 &ndash;&gt;
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            &lt;!&ndash; 使用MySQL方言的分页 &ndash;&gt;
+            <property name="helperDialect" value="mysql"/>&lt;!&ndash;如果使用mysql，这里value为mysql&ndash;&gt;
+            <property name="pageSizeZero" value="true"/>
+        </plugin>
+    </plugins>-->
+    <!--
+        配置数据库
+    -->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC" />
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <!--localhost:3306/1795?setUnicode=true&characterEncoding=UTF8&serverTimeZone:UTC-->
+                <property name="url" value="jdbc:mysql:///sh2004"/>
+                <property name="username" value="root"/>
+                <property name="password" value="jujingyi19940618"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+
+    <!--导入映射文件-->
+    <mappers>
+        <mapper resource="mappers/EmployeeMapper.xml" />
+    </mappers>
+
+</configuration>

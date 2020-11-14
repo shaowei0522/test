@@ -1,0 +1,4 @@
+Mybatis是一个持久层框架，所以需要的jar包主要就是数据库驱动包，以及MyBatis的jar包
+MyBatis的作用，省略了持久层的实现类代码，都是一些重复的数据库连接以及crud操作，代码比较冗余，所以使用MyBatis框架进行封装简化
+
+1、导入jar包，Mybatis.jar、Mysqlconnector.jar、
